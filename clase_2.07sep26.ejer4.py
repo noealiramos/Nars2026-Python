@@ -10,5 +10,6 @@ resumen =f"Mediante esta carta, confirmamos que el sr {nombre.title()} de {edad}
 resumen2 ="Mediante esta carta, confirmamos que el sr "+ nombre.title() + " de " + str(edad) + " años, percibe un sueldo de " + str(sueldo) + " pesos."
 
 
+
 print(f"{resumen=}")
 print(f"{resumen2=}")
