@@ -2,6 +2,7 @@
 # print(2+2)         #►4
 # print("ha"*3)       #►hahaha
 
+
 #-------------------------------------------
 
 # edad = input("Ingrese su edad: ") #tipo string
