@@ -1,44 +1,39 @@
-# # ENTREGABLE SPRINT 2: SISTEMA DE LOGIN
-# usuario = input("Usuario: ")
-# contrasena = input("Contraseña: ")
+# ENTREGABLE SPRINT 2: EL GUARDIÁN DE SONIDOLIBRE
+print("=== SISTEMA DE ACCESO — SONIDOLIBRE 2026 ===")
 
-# # TODO 1: Escribe un if que verifique si usuario == "admin".
-# # Dentro de ese bloque, agrega un if anidado para revisar la contraseña.
-# if usuario == "admin":
+# TODO 1: Credenciales fijas del sistema
+usuario_correcto = "admin"
+password_correcto = "sonido2026"
 
-# # TODO 2: Si contrasena == "1234", imprime:
-# # "Acceso total concedido. Bienvenido, administrador."
-#     if contrasena == "1234":
-#         print("Acceso total concedido. Bienvenido, administrador.")
-    
-# # TODO 3: Si la contraseña del admin es incorrecta, imprime:
-# # "Contraseña incorrecta. Acceso denegado."
-#     else:
-#         print("Contraseña incorrecta. Acceso denegado.")
+# TODO 2: Pedir usuario
+usuario_ingresado = input("Ingresa tu usuario: ")
 
-# # TODO 4: Agrega un elif para usuario == "invitado".
-# # El invitado no necesita contraseña.
-# # Imprime: "Bienvenido, invitado. Tienes acceso limitado."
-# elif usuario == "invitado":
-#     print("Bienvenido, invitado. Tienes acceso limitado.")
-# # TODO 5: Agrega un else final para cualquier otro usuario.
-# # Imprime: "Usuario no encontrado. Acceso denegado."
-# else:
-#     print("Usuario no encontrado. Acceso denegado.")
-    
-    
-# ENTREGABLE SPRINT 2: SISTEMA DE LOGIN
-usuario = input("Usuario: ")
-contrasena = input("Contraseña: ")
+# TODO 3: Pedir contraseña
+password_ingresado = input("Ingresa tu contraseña: ")
 
-if usuario == "admin":
-    if contrasena == "1234":
-        print("Acceso total concedido. Bienvenido, administrador.")
+# TODO 4: Primer filtro - validar credenciales
+if usuario_ingresado == usuario_correcto and password_ingresado == password_correcto:
+
+    # Tercer filtro agregado: validar edad
+    edad = int(input("Ingresa tu edad: "))
+
+    if edad > 18:
+        rol = input("Ingresa tu rol (admin/staff): ")
+
+        # TODO 6: Segundo filtro - validar rol
+        if rol == "admin":
+            print("Acceso total concedido. Bienvenido al panel de control.")
+        elif rol == "staff":
+            print("Acceso estándar concedido. Bienvenido, staff de SonidoLibre.")
+        else:
+            print("Rol no reconocido. Acceso denegado.")
+
     else:
-        print("Contraseña incorrecta. Acceso denegado.")
+        print("Acceso denegado. Debes ser mayor de 18 años.")
 
-elif usuario == "invitado":
-    print("Bienvenido, invitado. Tienes acceso limitado.")
-
+# TODO 7: Credenciales incorrectas
 else:
-    print("Usuario no encontrado. Acceso denegado.")
+    if usuario_ingresado != usuario_correcto:
+        print("Usuario no reconocido.")
+    else:
+        print("Contraseña incorrecta. Verifica tus datos.")
