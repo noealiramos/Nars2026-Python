@@ -8,7 +8,7 @@
 
 saldo = 1000
 cargo = 150
-dias = 0
+dias = 0 
 
 while saldo >0: 
    saldo = saldo - cargo #es igual a "saldo -=cargo"
