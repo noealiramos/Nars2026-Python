@@ -70,14 +70,15 @@
 # qué hay que hacer?? agregar los IFs que faltan
 # el resultado guardarlo en una variable para poder imprimir
 
-usuario = input("nombre de usuario: ")
-constrasena = input("contraseña: ")
-ip_origen = input("ip origen en formato xxx.xxx.x.x: ")
-red_corporativa = (ip_origen.startswith("192.168."))
+# usuario = input("nombre de usuario: ")
+# constrasena = input("contraseña: ")
+# ip_origen = input("ip origen en formato xxx.xxx.x.x: ")
+# red_corporativa = (ip_origen.startswith("192.168."))
 
 
 
- if usuario == "superadmin"
+#  if usuario == "superadmin"
+ 
 # │  ├─ red_corporativa = ip_origen.startswith("192.168.")
 # │  ├─ if contrasena == "S@perAdmin2024" and red_corporativa
 # │  │  └─ "ACCESO TOTAL"
@@ -103,3 +104,49 @@ red_corporativa = (ip_origen.startswith("192.168."))
 # │
 # └─ else
 #    └─ "DENEGADO: usuario no encontrado"
+
+
+# PARA QA DESTRUCTIVO
+# sistema_autenticacion.py
+
+usuario = input("Nombre de usuario: ")
+contrasena = input("Contraseña: ")
+ip_origen = input("IP origen en formato xxx.xxx.x.x: ")
+
+red_corporativa = ip_origen.startswith("192.168.")
+
+if usuario == "superadmin":
+
+    if contrasena == "S@perAdmin2024" and red_corporativa:
+        resultado = "ACCESO TOTAL — superadmin: todos los módulos habilitados."
+
+    elif contrasena != "S@perAdmin2024":
+        resultado = "DENEGADO — superadmin: contraseña incorrecta."
+
+    else:
+        resultado = "DENEGADO — superadmin: acceso remoto no permitido."
+
+elif usuario == "admin":
+
+    if contrasena == "Admin#2024":
+        resultado = "ACCESO CONCEDIDO — admin: módulos de gestión habilitados."
+
+    else:
+        resultado = "DENEGADO — admin: contraseña incorrecta."
+
+elif usuario == "auditor":
+
+    resultado = "ACCESO LECTURA — auditor: modo consulta activado. Sesión registrada."
+
+elif usuario == "operador":
+
+    if contrasena == "Oper@2024":
+        resultado = "ACCESO CONCEDIDO — operador: módulos operativos habilitados."
+
+    else:
+        resultado = "DENEGADO — operador: contraseña incorrecta."
+
+else:
+    resultado = f"DENEGADO — usuario {usuario} no encontrado en el directorio."
+
+print(resultado)
