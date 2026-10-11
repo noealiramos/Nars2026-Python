@@ -44,7 +44,7 @@ import random
 operaciones = 0
 
 while True:
-    print("\n1. Lanzar dado")
+    print("\n1. Lanzar  dado")
     print("2. Generar número aleatorio (1-100)")
     print("3. Ver contador de operaciones")
     print("4. Salir")
