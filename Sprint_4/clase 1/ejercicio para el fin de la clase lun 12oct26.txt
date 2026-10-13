@@ -1,0 +1,47 @@
+ESPECIFICACIÓN DEL RETO
+
+
+Nombre del archivo: incidentManager.py
+Contexto: Eres parte del equipo de mesa de servicio (help desk) de una empresa con 200 empleados. Tu turno es de 8 horas y necesitas un sistema en memoria para registrar, listar, cerrar y buscar incidentes durante tu turno. Cuando termina el turno, el sistema se cierra y los datos se pierden (en sprints futuros aprenderán a guardarlos en disco).
+Estructura inicial:
+· Una lista incidentes que arranca con 3 tickets pre-cargados (los del turno anterior que quedaron pendientes).
+· Un menú dentro de un while True: con 5 opciones:
+1. Registrar nuevo incidente
+2. Listar todos los incidentes abiertos
+3. Cerrar un incidente (por número de posición)
+4. Buscar si un incidente existe (por ID exacto)
+5. Salir del sistema
+Reglas de negocio (todas obligatorias):
+#
+Regla
+Razón
+R1
+El menú se muestra numerado del 1 al 5, no del 0 al 4
+Humanos cuentan desde 1
+R2
+El reporte de incidentes también se numera del 1 en adelante
+Mismo principio
+R3
+Cerrar incidente pide al usuario el NÚMERO HUMANO (1, 2, 3...) y el programa internamente lo convierte a índice (-1)
+Conversión explícita
+R4
+Si el usuario pide cerrar el número 99 cuando solo hay 3, el programa NO truena. Muestra "Número fuera de rango. Hay X incidentes."
+Guardia con if
+R5
+Si el usuario pide listar y la lista está vacía, NO se imprime un reporte vacío. Se muestra "No hay incidentes abiertos."
+UX profesional
+R6
+Buscar por ID usa el operador in. Si existe muestra "Encontrado". Si no, muestra "No se encontró ese ID."
+Patrón profesional
+R7
+Si el usuario elige opción inválida (6, 0, "hola"), el programa NO truena. Muestra "Opción inválida" y vuelve al menú
+Aprovecha lo de Clase 6
+R8
+Al salir con opción 5, se imprime "Sesión cerrada. Hasta el próximo turno." y se rompe el loop con break
+Cierre limpio
+
+Lo que NO va en este reto (no lo intenten):
+· ❌ Funciones (def) — se cubren en Clase 8
+· ❌ try/except — se cubren en Sprint 6
+· ❌ Diccionarios para los tickets — Sprint 5
+· ❌ Persistencia en archivo — Sprint 6
