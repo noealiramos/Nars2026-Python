@@ -17,5 +17,3 @@ sorpresa_cierre = bandas_confirmadas[-1]
 # TODO 3: Imprime ambos resultados con f-strings.
 print(f"Headliner del festival: {headliner}")
 print(f"Sorpresa de cierre: {sorpresa_cierre}")
-
-#pendiente contestar al dril 2
