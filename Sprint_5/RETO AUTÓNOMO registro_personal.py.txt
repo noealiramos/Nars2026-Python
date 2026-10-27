@@ -1,0 +1,52 @@
+RETO AUTÓNOMO: registro_personal.py (50 minutos de construcción + 25 de QA)
+
+Un área de RRHH necesita un registro en consola para dar de alta empleados,
+listarlos y buscarlos. Los empleados se guardan en UNA lista; cada empleado
+es UN diccionario.
+
+── ESTRUCTURA DE DATOS ─────────────────────────────────────────────
+  registro = []                      # la lista que contendrá los expedientes
+  cada empleado es un dict con las claves:
+     "nombre"           (str)|
+     "departamento"     (str)
+     "salario_mensual"  (float)
+     "nivel_acceso"     (int, 1-5)
+
+── OPERACIÓN 1: ALTA ───────────────────────────────────────────────
+  Pedir los 4 datos por input() con el casting correcto.
+  Construir el diccionario del empleado.
+  Agregarlo a la lista con .append().
+  El sistema debe permitir dar de alta AL MENOS 3 empleados.
+  (Sugerencia: usa un bucle que pregunte "¿Agregar otro? (si/no)")
+
+── OPERACIÓN 2: LISTADO ────────────────────────────────────────────
+  Recorrer la lista con for.
+  Por cada empleado, imprimir sus campos de forma legible.
+  Numerar cada expediente (Empleado 1, Empleado 2, ...).
+  Si la lista está vacía, avisar "No hay empleados registrados"
+  (NO debe reventar ni imprimir una lista vacía silenciosa).
+
+── OPERACIÓN 3: BÚSQUEDA POR NOMBRE ────────────────────────────────
+  Pedir un nombre.
+  Recorrer la lista buscando un empleado cuyo "nombre" coincida.
+  Si lo encuentra: imprimir su expediente completo.
+  Si NO lo encuentra: imprimir "Empleado no encontrado" (sin reventar).
+  GUARDIA OBLIGATORIA: leer empleado["nombre"] de forma que NO lance
+  KeyError aunque algún expediente esté incompleto (usa in o .get()).
+
+── FORMATO DE SALIDA (mínimo) ──────────────────────────────────────
+  Empleado 1
+    nombre: Ana García
+    departamento: Finanzas
+    salario_mensual: 45000.0
+    nivel_acceso: 4
+
+── BONUS (solo si terminas; NO obligatorio) ───────────────────────
+  Bonus A: contar cuántos empleados hay por departamento.
+  Bonus B (marcado CLASE 10, no lo hagas aún): normalizar el nombre
+           con .strip() y .lower() antes de buscar. Se trabaja la próxima clase.
+
+Archivo: registro_personal.py
+
+notas:
+registro = dejarlo a nivel global
