@@ -1,4 +1,4 @@
-# Registro de personal - Operaciones 1: Alta y 2: Listado
+# Registro de personal - Operaciones 1: Alta, 2: Listado y 3: Búsqueda por nombre
 # Cada empleado se guarda como un diccionario dentro de esta lista global.
 registro = []
 
@@ -53,6 +53,25 @@ def funcion_listado():
         numero = numero + 1 # lo mismo hace "numero +=1" (en ese orden)
 
 
+def funcion_busqueda():
+    # Busca empleados por nombre e imprime su expediente completo.
+    buscado = input("Nombre a buscar: ").strip().lower()
+    encontrado = False
+
+    for empleado in registro:
+        # Guardia: .get() evita KeyError si el expediente no tiene "nombre".
+        nombre = empleado.get("nombre")
+        if nombre is not None and nombre.strip().lower() == buscado:
+            encontrado = True
+            print("Expediente encontrado:")
+            for campo, valor in empleado.items():
+                print(f"  {campo}: {valor}")
+            print()
+
+    if not encontrado:
+        print("Empleado no encontrado")
+
+
 def funcion_menu():
     # El menú se repite hasta que el usuario elija salir.
     while True:
@@ -85,8 +104,8 @@ def funcion_menu():
             funcion_listado()
 
         elif opcion == "3":
-            # Aquí agregaremos la operación 3 del requerimiento.
-            print("Búsqueda por nombre pendiente de implementar.")
+            print("\n=== Búsqueda de usuarios por nombre ===")
+            funcion_busqueda()
 
         elif opcion == "4":
             print("Hasta luego.")
