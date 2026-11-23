@@ -1,0 +1,42 @@
+# Calculadora Modular con Funciones
+
+print("=== CALCULADORA MODULAR ===\n")
+
+
+# TODO 1 y TODO 2: Funciones con dos parámetros y su return
+def sumar(a, b):
+    return a + b
+
+
+def restar(a, b):
+    return a - b
+
+
+def multiplicar(a, b):
+    return a * b
+
+
+def dividir(a, b):
+    # Guardia: se revisa ANTES de dividir
+    if b == 0:
+        return "Error: división por cero"
+    return a / b
+
+
+# TODO 3: Variables y f-strings con las cuatro operaciones
+num1 = 20
+num2 = 5
+
+print(f"Suma: {num1} + {num2} = {sumar(num1, num2)}")
+print(f"Resta: {num1} - {num2} = {restar(num1, num2)}")
+print(f"Multiplicación: {num1} * {num2} = {multiplicar(num1, num2)}")
+print(f"División: {num1} / {num2} = {dividir(num1, num2)}")
+
+
+# TODO 4: Comprobar la guardia
+print(f"\nDivisión: 10 / 0 = {dividir(10, 0)}")
+
+
+# TODO 5: Reutilizar las funciones con otros valores
+print(f"\nSuma: 100 + 250 = {sumar(100, 250)}")
+print(f"Resta: 1000 - 750 = {restar(1000, 750)}")
