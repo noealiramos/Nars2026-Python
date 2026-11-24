@@ -1,0 +1,12 @@
+[2026-11-23 21:01:37] Razón de endeudamiento -> OK (2.0)
+[2026-11-23 21:02:12] Margen sobre nómina -> OK (30.0)
+[2026-11-23 21:02:24] Margen sobre nómina -> OK (3.0)
+[2026-11-23 21:03:05] Margen sobre nómina -> OK (1.0)
+[2026-11-23 21:04:03] Margen sobre nómina -> OK (0.01)
+[2026-11-23 21:12:23] Razón de endeudamiento -> OK (1.0)
+[2026-11-23 21:40:39] Razon de endeudamiento -> OK (10.18)
+[2026-11-23 21:40:52] Margen sobre nomina -> OK (0.25)
+[2026-11-23 21:49:16] Razon de endeudamiento -> OK (1.09)
+[2026-11-23 21:49:23] Margen sobre nomina -> OK (1.2)
+[2026-11-23 21:55:25] Razon de endeudamiento -> ERROR ZeroDivisionError
+[2026-11-23 21:56:07] Margen sobre nomina -> OK (51.28)
